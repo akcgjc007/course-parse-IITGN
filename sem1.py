@@ -14,8 +14,7 @@ with open(filename, 'r') as data:
             obj["credits"] = row[6]
 
             if len(row[7]) and row[7]!='TBA': 
-                obj["profs"] = row[7].split(', ')
-
+                obj["profs"] = split(', |\n',row[7])
             if len(row[15])!=0 and row[15].isspace()==0:
                 lt = split(', |/ ',row[15])
                 if lt[0][0] == 'm':
